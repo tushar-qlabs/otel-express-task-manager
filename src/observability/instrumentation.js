@@ -6,6 +6,9 @@ const { OTLPLogExporter } = require('@opentelemetry/exporter-logs-otlp-proto');
 const { PeriodicExportingMetricReader } = require('@opentelemetry/sdk-metrics');
 const { BatchLogRecordProcessor } = require('@opentelemetry/sdk-logs');
 
+// Set the service name via environment variable (most reliable method)
+process.env.OTEL_SERVICE_NAME = 'task-manager';
+
 const sdk = new NodeSDK({
     traceExporter: new OTLPTraceExporter(),
     metricReader: new PeriodicExportingMetricReader({
@@ -16,3 +19,5 @@ const sdk = new NodeSDK({
 });
 
 sdk.start();
+
+

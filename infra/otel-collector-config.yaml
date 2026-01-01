@@ -8,9 +8,11 @@ receivers:
 
 processors:
   batch:
+    timeout: 200ms
+    send_batch_size: 100
 
 exporters:
-  otlp/tempo:
+  otlp:
     endpoint: tempo:4317
     tls:
       insecure: true
@@ -19,7 +21,7 @@ exporters:
     endpoint: "0.0.0.0:8889"
     namespace: "otel-express-logs"
 
-  otlphttp/loki:
+  otlphttp:
     endpoint: "http://loki:3100/otlp"
     tls:
       insecure: true
@@ -32,7 +34,7 @@ service:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [otlp/tempo, debug]
+      exporters: [otlp, debug]
     metrics:
       receivers: [otlp]
       processors: [batch]
@@ -40,4 +42,4 @@ service:
     logs:
       receivers: [otlp]
       processors: [batch]
-      exporters: [otlphttp/loki]
+      exporters: [otlphttp]
