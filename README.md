@@ -1,6 +1,8 @@
-# Express Task Manager with OpenTelemetry
+# OpenTelemetry Observability Stack Demo
 
-A robust Node.js Task Management API instrumented with a full OpenTelemetry observability stack (Loki, Tempo, Prometheus, Grafana).
+This project demonstrates how to implement a complete **OpenTelemetry Observability Stack** (Loki, Tempo, Prometheus, Grafana) for a Node.js application.
+
+It uses a simple Task Manager API as a test subject to generate Logs, Traces, and Metrics.
 
 ![OTel Pipeline Diagram](./otel_flow_diagram.png)
 
