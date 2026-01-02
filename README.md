@@ -4,7 +4,7 @@ This project demonstrates how to implement a complete **OpenTelemetry Observabil
 
 It uses a simple Task Manager API as a test subject to generate Logs, Traces, and Metrics.
 
-![OTel Pipeline Diagram](./otel_flow_diagram.png)
+![OTel Pipeline Diagram](./screenshots/otel_flow_diagram.png)
 
 ## Features
 
